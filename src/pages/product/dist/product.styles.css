@@ -1,0 +1,15 @@
+.product-page {
+  display: flex;
+  flex-direction: column;
+}
+.product-page .title {
+  font-size: 38px;
+  margin: 0 auto 30px;
+}
+.product-page .products {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.product-page .products .collection-item {
+  margin-bottom: 30px;
+}

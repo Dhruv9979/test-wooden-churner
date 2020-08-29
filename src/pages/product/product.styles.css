@@ -1,0 +1,26 @@
+.product-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.product-page .title {
+  font-size: 38px;
+  margin: 0 auto 30px;
+}
+
+.product-page .products {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.product-page .products .collection-item {
+  margin-bottom: 30px;
+}
+/*# sourceMappingURL=product.styles.css.map */
