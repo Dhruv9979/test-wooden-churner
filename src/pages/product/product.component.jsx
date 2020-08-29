@@ -23,7 +23,7 @@ const ProductPage = ({product}) => {
 };
 
 const mapStateToProps = (state, ownProps) => ({
-	product: selectProduct(ownProps.match.params.collectionId.productId)(state),
+	product: selectProduct(ownProps.match.params.productId)(state),
 });
 
 export default connect(mapStateToProps)(ProductPage);

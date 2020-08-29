@@ -35,7 +35,7 @@ var PRODUCT_ID_MAP = {
 };
 
 var selectCollection = function selectCollection(state) {
-  return console.log(state.collection.products);
+  return state.collection;
 };
 
 var selectProducts = (0, _reselect.createSelector)([selectCollection], function (collection) {

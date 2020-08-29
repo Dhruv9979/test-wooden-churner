@@ -24,7 +24,7 @@ const PRODUCT_ID_MAP = {
 	// rockSalt: 20,
 };
 
-const selectCollection = (state) => console.log(state.collection.products);
+const selectCollection = (state) => state.collection;
 
 export const selectProducts = createSelector(
 	[selectCollection],
