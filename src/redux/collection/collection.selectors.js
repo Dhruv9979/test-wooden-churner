@@ -26,11 +26,9 @@ const PRODUCT_ID_MAP = {
 
 const selectCollection = (state) => state.collection;
 
-export const selectProducts = createSelector(
-	[selectCollection],
-	(collection) => collection.products
-);
+export const selectProducts = createSelector([selectCollection], (collection) => collection.items);
 
-export const selectProduct = memoize((productUrlParam) =>
-	createSelector([selectProducts], (products) => products[productUrlParam])
-);
+export const selectProduct = (productUrlParam) =>
+	createSelector([selectProducts], (products) =>
+		products.find((product) => product.id === PRODUCT_ID_MAP[productUrlParam])
+	);
