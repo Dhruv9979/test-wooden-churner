@@ -5,7 +5,6 @@ import "./shop.styles.scss";
 
 import CollectionsOverview from "../../components/collections-overview/collections-overview.component";
 import CollectionPage from '../collection/collection.component';
-import ProductPage from "../product/product.component";
 
 const ShopPage = ({ match }) => (
 	<div className="shop-page">

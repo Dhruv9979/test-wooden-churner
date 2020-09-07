@@ -1,22 +1,20 @@
 import React from "react";
 import { connect } from "react-redux";
-import { createStructuredSelector } from "reselect";
+// import { createStructuredSelector } from "reselect";
 
 import CollectionItem from "../../components/collection-item/collection-item.component";
 
-import { selectProducts } from "../../redux/collection/collection.selectors";
+import { selectProduct } from "../../redux/collection/collection.selectors";
 
 import './product.styles.scss'
 
 const ProductPage = ({items}) => {
-	console.log(items);
-	// const { size, products } = items;
-	// console.log(products);
+	const { name, products } = items;
     return (
 		<div className="product-page">
-			<h2 className="title">Category Page</h2>
+			<h2 className="title">{name}</h2>
 			<div className="products">
-				{items.map((product) => (
+				{products.map((product) => (
 					<CollectionItem key={product.id} item={product} />
 				))}
 			</div>
@@ -24,12 +22,12 @@ const ProductPage = ({items}) => {
 	);
 };
 
-const mapStateToProps = createStructuredSelector({
-	items: selectProducts,
-});
-
-// const mapStateToProps = (state) => ({
-// 	products: selectProducts(1)(state),
+// const mapStateToProps = createStructuredSelector({
+// 	items: selectProducts,
 // });
+
+const mapStateToProps = (state, ownProps) => ({
+	items: selectProduct(ownProps.match.params.productId)(state),
+});
 
 export default connect(mapStateToProps)(ProductPage);
